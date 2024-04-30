@@ -1,0 +1,32 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.B-part_number, .I-part_number {
+    background-color: #aaffaa; /* Light green */
+    color: darkgreen;
+    border: 1px solid green;
+    border-radius: 4px;
+    padding: 3px 6px;
+    margin: 2px;
+}
+.B-time_period, .I-time_period {
+    background-color: #ffdddd; /* Light red */
+    color: darkred;
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 3px 6px;
+    margin: 2px;
+}
+.B-quantity, .I-quantity {
+    background-color: #dddaff; /* Light purple */
+    color: darkblue;
+    border: 1px solid blue;
+    border-radius: 4px;
+    padding: 3px 6px;
+    margin: 2px;
+}
+span {
+    display: inline-block;
+}
