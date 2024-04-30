@@ -2,31 +2,80 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
 }
-.B-part_number, .I-part_number {
-    background-color: #aaffaa; /* Light green */
-    color: darkgreen;
-    border: 1px solid green;
-    border-radius: 4px;
-    padding: 3px 6px;
-    margin: 2px;
-}
-.B-time_period, .I-time_period {
-    background-color: #ffdddd; /* Light red */
-    color: darkred;
-    border: 1px solid red;
-    border-radius: 4px;
-    padding: 3px 6px;
-    margin: 2px;
-}
-.B-quantity, .I-quantity {
-    background-color: #dddaff; /* Light purple */
-    color: darkblue;
-    border: 1px solid blue;
-    border-radius: 4px;
-    padding: 3px 6px;
-    margin: 2px;
+h1 {
+    color: #0056b3;
 }
 span {
     display: inline-block;
+    margin: 2px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    position: relative; /* Enable positioning of the tag label */
+    top: 0;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Default style for Outside tags */
+.O {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Styles for Beginning tags with label */
+.B-part_number, .B-time_period, .B-quantity, .B-customer_name {
+    font-weight: bold;
+    border: 2px solid; /* Solid border for B tags */
+}
+
+.B-part_number {
+    background-color: #aaffaa;
+    border-color: green;
+    color: darkgreen;
+}
+
+.B-time_period {
+    background-color: #ffdddd;
+    border-color: red;
+    color: darkred;
+}
+
+.B-quantity {
+    background-color: #dddaff;
+    border-color: blue;
+    color: darkblue;
+}
+
+.B-customer_name {
+    background-color: #f0e68c; /* Khaki for better visibility */
+    border-color: gold;
+    color: #b59f3b;
+}
+
+/* Styles for Inside tags */
+.I-part_number, .I-time_period, .I-quantity, .I-customer_name {
+    font-style: italic;
+    padding: 3px 6px;
+}
+
+.I-part_number { background-color: #e7ffe7; }
+.I-time_period { background-color: #ffe7e7; }
+.I-quantity    { background-color: #f4f4ff; }
+.I-customer_name { background-color: #ffffe0; }
+
+/* Tag labels showing up on hover or always visible */
+span:hover::after, span::after {
+    content: attr(data-tag); /* Use the data-tag attribute to display the tag */
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 0.8em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    display: block;
 }

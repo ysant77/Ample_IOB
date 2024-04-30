@@ -9,12 +9,18 @@
 <body>
     <h1>Training Data Viewer</h1>
     {% for item in data %}
-        <p><strong>Sentence:</strong> {{ item.sentence }}</p>
-        <p>
+        <div><strong>Intent:</strong> {{ item.intent }}</div>
+        <div><strong>Sentence:</strong> {{ item.sentence }}</div>
+        <div>
             {% for token, tag in zip(item.tokens, item.tags) %}
-                <span class="{{ tag }}">{{ token }}</span>
+                {% if tag != 'O' %}
+                    <span class="{{ tag }}" data-tag="{{ tag.split('-')[1] }}">{{ token }}</span>
+                {% else %}
+                    {{ token }} <!-- Render untagged tokens without span -->
+                {% endif %}
             {% endfor %}
-        </p>
+        </div>
+        <hr>
     {% endfor %}
 </body>
 </html>
